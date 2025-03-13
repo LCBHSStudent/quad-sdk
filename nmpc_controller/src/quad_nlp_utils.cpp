@@ -72,6 +72,29 @@ void quadNLP::loadCasadiFuncs() {
   eval_sparsity_vec_[A1][JAC] = eval_jac_g_a1_sparsity_out;
   eval_sparsity_vec_[A1][HESS] = eval_hess_g_a1_sparsity_out;
 
+  // Load basic leg controller functions for the vision60 platform
+  eval_vec_[VISION60][FUNC] = eval_g_vision60;
+  eval_vec_[VISION60][JAC] = eval_jac_g_vision60;
+  eval_vec_[VISION60][HESS] = eval_hess_g_vision60;
+  eval_work_vec_[VISION60][FUNC] = eval_g_vision60_work;
+  eval_work_vec_[VISION60][JAC] = eval_jac_g_vision60_work;
+  eval_work_vec_[VISION60][HESS] = eval_hess_g_vision60_work;
+  eval_incref_vec_[VISION60][FUNC] = eval_g_vision60_incref;
+  eval_incref_vec_[VISION60][JAC] = eval_jac_g_vision60_incref;
+  eval_incref_vec_[VISION60][HESS] = eval_hess_g_vision60_incref;
+  eval_decref_vec_[VISION60][FUNC] = eval_g_vision60_decref;
+  eval_decref_vec_[VISION60][JAC] = eval_jac_g_vision60_decref;
+  eval_decref_vec_[VISION60][HESS] = eval_hess_g_vision60_decref;
+  eval_checkout_vec_[VISION60][FUNC] = eval_g_vision60_checkout;
+  eval_checkout_vec_[VISION60][JAC] = eval_jac_g_vision60_checkout;
+  eval_checkout_vec_[VISION60][HESS] = eval_hess_g_vision60_checkout;
+  eval_release_vec_[VISION60][FUNC] = eval_g_vision60_release;
+  eval_release_vec_[VISION60][JAC] = eval_jac_g_vision60_release;
+  eval_release_vec_[VISION60][HESS] = eval_hess_g_vision60_release;
+  eval_sparsity_vec_[VISION60][FUNC] = eval_g_vision60_sparsity_out;
+  eval_sparsity_vec_[VISION60][JAC] = eval_jac_g_vision60_sparsity_out;
+  eval_sparsity_vec_[VISION60][HESS] = eval_hess_g_vision60_sparsity_out;
+
   // Load simple to simple functions - for adaptive complexity
   eval_vec_[SIMPLE_TO_SIMPLE][FUNC] = eval_g_leg_simple;
   eval_vec_[SIMPLE_TO_SIMPLE][JAC] = eval_jac_g_leg_simple;
