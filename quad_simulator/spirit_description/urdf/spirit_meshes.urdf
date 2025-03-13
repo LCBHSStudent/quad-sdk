@@ -92,6 +92,7 @@ SOFTWARE.
       <pose>0 0 0 0 0 0</pose>
     </sensor>
   </gazebo>
+  
   <!-- Hip motor -->
   <link name="hip0">
     <!--			<visual>-->

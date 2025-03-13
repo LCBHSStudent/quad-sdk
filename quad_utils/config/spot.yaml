@@ -3,11 +3,11 @@ global_body_planner:
   h_min: 0.191                            # Minimum ground clearance of body corners, m
   h_nom: 0.61                             # Nominal ground clearance of body, m
   v_max: 1.6                              # Maximum robot velocity, m/s
-  v_nom: 0.75                             # Nominal velocity, m/s (used during connect function)
+  v_nom: 1.0                              # Nominal velocity, m/s (used during connect function)
   robot_l: 1.1                            # Length of robot body, m
   robot_w: 0.5                            # Width of robot body, m
-  robot_h: 0.05                           # Vertical distance between leg base and bottom of robot, m
-  mass: 13.0                              # Robot mass, kg
+  robot_h: 0.15                           # Vertical distance between leg base and bottom of robot, m
+  mass: 33.8                              # Robot mass, kg
   grf_min: 4.0                            # Minimum GRF in units of body weight (only used for sampling)
   grf_max: 5.0                            # Maximum GRF in units of body weight
 
@@ -60,7 +60,7 @@ nmpc_controller:
     g_ub: [!!float 2e19, !!float 2e19,  !!float 2e19,  !!float 2e19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, !!float 2e19, !!float 2e19,  !!float 2e19,  !!float 2e19, !!float 2e19, !!float 2e19,  !!float 2e19,  !!float 2e19,  !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19, !!float 2e19]
     
 robot_driver:
-  sit_kp: [10, 10, 10]
+  sit_kp: [10, 70, 10]
   sit_kd: [1, 1, 1]
   stand_kp: [35, 35, 35]
   stand_kd: [1, 1, 1]
@@ -72,6 +72,6 @@ robot_driver:
   swing_kd_cart: [0, 0, 0] # N/m
   safety_kp: [0, 0, 0]
   safety_kd: [2, 2, 2]
-  stand_joint_angles: [0.0, 0.76, 1.52]
-  sit_joint_angles: [0.0, 0.0, 0.0]
-  torque_limit: [21, 21, 32]
+  stand_joint_angles: [0.0, 1.2, -1.5]
+  sit_joint_angles: [0.0, 1.82, -2.74]
+  torque_limit: [800, 1000, 1000]
