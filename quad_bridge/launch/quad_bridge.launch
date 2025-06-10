@@ -1,0 +1,19 @@
+<launch>
+  <!-- Quad Bridge Node -->
+  <node name="quad_bridge_node" pkg="quad_bridge" type="quad_bridge" output="screen">
+    <!-- ROS Input Topics -->
+    <param name="joint_state_topic" value="/robot_1/joint_states"/>
+    <param name="imu_topic" value="/robot_1/trunk_imu"/>
+    <param name="terrain_map_topic" value="/terrain_map_raw"/>
+    <param name="fl_contact_topic" value="/robot_1/gazebo/toe0_contact_state"/>
+    <param name="rl_contact_topic" value="/robot_1/gazebo/toe1_contact_state"/>
+    <param name="fr_contact_topic" value="/robot_1/gazebo/toe2_contact_state"/>
+    <param name="rr_contact_topic" value="/robot_1/gazebo/toe3_contact_state"/>
+
+    <!-- Unitree SDK2 Output Configuration -->
+    <param name="unitree_low_state_topic" value="rt/lowstate"/>
+    <param name="unitree_occ_topic" value="rt/terrain"/>
+    <param name="unitree_domain_id" value="1"/>
+    <param name="unitree_network_interface" value="lo"/>
+  </node>
+</launch>

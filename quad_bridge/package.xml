@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>quad_bridge</name>
+  <version>0.1.0</version>
+  <description>Bridge for boardcasting quad_msgs to various systems</description>
+  <maintainer email="william.ren@robosense.cn">william.ren</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- both runtime and build -->
+  <!-- ROS1 -->
+  <depend condition="$ROS_VERSION == 1">roscpp</depend>
+  <depend condition="$ROS_VERSION == 1">topic_tools</depend>
+  <depend condition="$ROS_VERSION == 1">roslib</depend>
+  <depend condition="$ROS_VERSION == 1">sensor_msgs</depend>
+  <depend condition="$ROS_VERSION == 1">geometry_msgs</depend>
+  <depend condition="$ROS_VERSION == 1">nav_msgs</depend>
+  <depend condition="$ROS_VERSION == 1">gazebo_msgs</depend>
+
+  <!-- common -->
+  <depend>yaml-cpp</depend>
+  <depend>grid_map_core</depend>
+  <depend>grid_map_ros</depend>
+  <depend>grid_map_pcl</depend>
+
+  <!-- build -->
+  <depend>quad_utils</depend>
+  <!-- ROS1 -->
+  <buildtool_depend condition="$ROS_VERSION == 1">catkin</buildtool_depend>
+
+  <!-- test -->
+  <test_depend condition="$ROS_VERSION == 2">ament_lint_auto</test_depend>
+  <test_depend condition="$ROS_VERSION == 2">ament_lint_common</test_depend>
+
+  <export>
+    <build_type condition="$ROS_VERSION == 1">catkin</build_type>
+  </export>
+</package>
